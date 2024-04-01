@@ -1,1 +1,0 @@
-# assetmap-applet
