@@ -1,4 +1,6 @@
 import mockHouseholds from "./households.json";
+import mockInstruments from "./instruments.json";
+import mockHouseholdMembers from "./householdmembers.json";
 
 // Welcome to the simulation
 function fakeAPICall(type, id) {
@@ -11,12 +13,27 @@ function fakeAPICall(type, id) {
 					resolve({ data: mockHouseholds[id], status: "success" });
 				} else {
 					// Simulate error
-					reject(new Error("Cannot find object"));
+					reject(new Error("Cannot find household"));
 				}
-			} else {
-				// Simulate error
-				reject(new Error("Cannot find endpoint"));
 			}
+			if (type === "instrument") {
+				if (id in mockInstruments) {
+					resolve({ data: mockInstruments[id], status: "success" });
+				} else {
+					// Simulate error
+					reject(new Error("Cannot find instrument"));
+				}
+			}
+			if (type === "householdmember") {
+				if (id in mockHouseholdMembers) {
+					resolve({ data: mockHouseholdMembers[id], status: "success" });
+				} else {
+					// Simulate error
+					reject(new Error("Cannot find householdmember"));
+				}
+			}
+			// Simulate error
+			reject(new Error("Cannot find endpoint"));
 		}, 1000); // Simulate 1 second delay
 	});
 }

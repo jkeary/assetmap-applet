@@ -1,7 +1,7 @@
 {
 	"Zwa9lDNx": {
 		"id": "Zwa9lDNx",
-		"address": "",
+		"address": "1234 Nice Street",
 		"address2": "",
 		"advisors": [
 			{
@@ -15,15 +15,15 @@
 		],
 		"assetmap_image_url": "/household/Zwa9lDNx/assetmap/image",
 		"cache": "hit",
-		"cache_secs": 1666.303059,
-		"cache_utc": "2024-04-03T14:37:27.914019",
-		"city": "",
+		"cache_secs": 0.763845,
+		"cache_utc": "2024-04-10T18:14:12.990210",
+		"city": "Philadelphia",
 		"country": "US",
 		"created_utc": 1674247627.767285,
 		"currency": "USD",
 		"description": "",
-		"dirty_secs": 1903911.115948,
-		"dirty_utc": "2024-03-12T14:13:23.101130",
+		"dirty_secs": 0.843942,
+		"dirty_utc": "2024-04-10T18:14:12.910113",
 		"householdmembers": [
 			{
 				"id": "03nrVzn7",
@@ -1060,12 +1060,12 @@
 			}
 		},
 		"is_linked": true,
-		"is_private": false,
+		"is_private": true,
 		"language": "en-us",
 		"language_setting": "",
-		"name": "809bulkfamily3",
-		"phone_number": "",
-		"state": "",
+		"name": "The Hendersons",
+		"phone_number": "234-923-9823",
+		"state": "PA",
 		"status": "client",
 		"targetmaps": [
 			{
@@ -1076,6 +1076,6 @@
 			}
 		],
 		"uuid": "983cdde3-0b06-4a77-8a2b-f7050261fa16",
-		"zip": ""
+		"zip": "11234"
 	}
 }

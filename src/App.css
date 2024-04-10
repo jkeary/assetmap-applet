@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  text-align: left;
+  padding: 15px 20px;
 }
 
 .App-logo {
@@ -13,21 +14,28 @@
   }
 }
 
+.Error-state {
+	background-color: #FFCCCC;
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* margin: 25px 30px; */
+  border-bottom: 1px solid rgb(238, 238, 238);
+  h1 {
+	font-family: "Open Sans", sans-serif;
+    color: rgb(63, 68, 68);
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+    margin: 0px 0px 15px;
+  }
 }
 
 .App-link {
   color: #61dafb;
 }
 
+/* loading state */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +43,54 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+	display: flex;
+    flex-direction: column;
+}
+
+.list {
+	flex-wrap: wrap;
+	display: flex;
+	margin: 20px 0px;
+	.item {
+		width: 100%;
+		display: flex;
+    	flex-direction: row;
+    	margin: 0px 0px 10px;
+		.label {
+			flex: 1;
+			margin: 0px 0px 5px 10px;
+			font-size: 11px;
+			font-weight: 600;
+			margin: 0px 8px;
+			color: rgb(102, 102, 102);
+			align-self: center;
+		}
+		.value {
+			flex: 3;
+			margin: 0px 8px;
+			min-width: 30px;
+			background: rgb(255, 255, 255);
+    		color: rgb(63, 68, 68);
+    		border-radius: 6px;
+		}
+	}
+}
+
+button {
+	width: 120px;
+	background: rgb(120, 190, 32);
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    transition: all 0.1s ease 0s;
+    letter-spacing: 0.3px;
+	align-self: flex-end;
 }
