@@ -1,0 +1,82 @@
+{
+	"03nrVzn7": {
+		"id": "03nrVzn7",
+		"address": "1234 Nice Street",
+		"address2": "",
+		"avatar": {
+			"thumbnail": "/static/img/members/sets/set-05/primary-head.png",
+			"url": "/static/img/members/sets/set-05/primary-full.png"
+		},
+		"category": "primary",
+		"citizenship": "US",
+		"city": "Philadelphia",
+		"country": "US",
+		"created_utc": 1682569769.336899,
+		"date_of_birth": "2023-04-27",
+		"date_of_birth_estimated": true,
+		"description": "Father",
+		"email": "b.absolutego@fakeo.com",
+		"entity_rollup": false,
+		"first_name": "Kidus",
+		"gender": "N",
+		"integrations": {
+			"available": [
+				"blackdiamond"
+			],
+			"enabled": [
+				"blackdiamond"
+			],
+			"read_only_fields": []
+		},
+		"is_linked": true,
+		"last_name": "ADM",
+		"member_type": "member",
+		"name": "Kidus ADM",
+		"notes": "<p>test note</p>",
+		"owners": [],
+		"phone_number": "234-923-9823",
+		"signpost": {},
+		"signpost_selected": null,
+		"state": "PA",
+		"uuid": "5da306ac-003e-438b-8b51-c9ed27080a69",
+		"zip": "23234"
+	},
+	"9D8dVAgm": {
+		"id": "9D8dVAgm",
+		"address": "",
+		"address2": "",
+		"avatar": {
+			"thumbnail": "/static/img/members/sets/set-05/spouse-head.png",
+			"url": "/static/img/members/sets/set-05/spouse-full.png"
+		},
+		"category": "spouse",
+		"citizenship": "US",
+		"city": "",
+		"country": "US",
+		"created_utc": 1675875005.863297,
+		"date_of_birth": "2023-02-08",
+		"date_of_birth_estimated": true,
+		"description": "",
+		"email": "",
+		"entity_rollup": false,
+		"first_name": "Sinclair",
+		"gender": "N",
+		"integrations": {
+			"available": [],
+			"enabled": [],
+			"read_only_fields": []
+		},
+		"is_linked": false,
+		"last_name": "A",
+		"member_type": "member",
+		"name": "Sinclair A",
+		"notes": "",
+		"owners": [],
+		"phone_number": "",
+		"signpost": {},
+		"signpost_selected": null,
+		"state": "",
+		"uuid": "2dc0d6fa-4b61-4d38-9751-9bbd159779db",
+		"zip": ""
+	}
+}
