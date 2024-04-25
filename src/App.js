@@ -1,10 +1,13 @@
+import axios from "axios";
+
 import { useState, useEffect } from "react";
-import { makeAPICall } from "./mock_api/fake_api";
+import { makeAPICall as mockAPICall } from "./mock_api/fake_api";
 import LogoSpinner from "./LogoSpinner";
 import "./App.css";
 
 const App = () => {
 	const [appletState, setAppletState] = useState("init");
+	const [householdId, setHouseholdId] = useState();
 	const [household, setHousehold] = useState();
 	const [householdInfo, setHouseholdInfo] = useState({
 		status: "client",
@@ -153,6 +156,7 @@ const App = () => {
 			);
 			if (ev.data?.event === "glass.assetmap.state") {
 				setAppletState("loading");
+				setHouseholdId(ev.data?.payload?.householdId);
 				fetchData(ev.data?.payload?.householdId, "household");
 			}
 			if (ev.data?.event === "glass.assetmap.click") {
@@ -220,29 +224,48 @@ const App = () => {
 		return true;
 	};
 
+	async function makeAPICall(type, id) {
+		let url = `/api/v3/household/${id}/info`;
+		if (type === "instrument") {
+			url = `/api/v3/household/${householdId}/instrument/${id}`;
+		}
+		if (type === "householdmember") {
+			url = `/api/v3/household/${householdId}/member/${id}`;
+		}
+		try {
+            const response = await axios.get(url)
+            return response
+        } catch (error) {
+            console.error('Error fetching data from API:', error);
+            throw error;
+        }
+            
+	}
+
 	async function fetchData(id, type) {
 		try {
 			const response = await makeAPICall(type, id);
-			console.log("Received data:", response);
-			if (type === "household") {
-				if (deepEqual(response["data"], household)) {
-					setAppletState("household");
-				} else {
-					setHousehold(response["data"]);
+			if (response) {
+				if (type === "household") {
+					if (deepEqual(response.data, household)) {
+						setAppletState("household");
+					} else {
+						setHousehold(response.data);
+					}
 				}
-			}
-			if (type === "instrument") {
-				if (deepEqual(response["data"], instrument)) {
-					setAppletState("instrument");
-				} else {
-					setInstrument(response["data"]);
+				if (type === "instrument") {
+					if (deepEqual(response["data"], instrument)) {
+						setAppletState("instrument");
+					} else {
+						setInstrument(response["data"]);
+					}
 				}
-			}
-			if (type === "householdmember") {
-				if (deepEqual(response["data"], householdmember)) {
-					setAppletState("householdmember");
-				} else {
-					setHouseholdmember(response["data"]);
+				if (type === "householdmember") {
+					if (deepEqual(response["data"], householdmember)) {
+						setAppletState("householdmember");
+					} else {
+						setHouseholdmember(response["data"]);
+					}
 				}
 			}
 		} catch (error) {
@@ -339,7 +362,7 @@ const App = () => {
 	};
 
 	return (
-		<div className={`App ${appletState === 'error' ? 'Error-state' : ''}`}>
+		<div className={`App ${appletState === "error" ? "Error-state" : ""}`}>
 			{appletState === "init" && (
 				<header className="App-header">
 					<p>Welcome to the Asset-Map Applet</p>
